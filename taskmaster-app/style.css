@@ -1,0 +1,223 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #F7F9FF;
+    overflow-x: hidden;
+}
+
+/* CARD */
+.card {
+    width: 420px;
+    max-width: 90%;
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    margin: 60px auto;
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* LOGO */
+.logo {
+    width: 75px;
+    height: 75px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #4A4CFF, #7A5CFF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(80, 89, 255, 0.4);
+}
+
+.logo .icon {
+    width: 40px;
+    height: 40px;
+    color: white;
+}
+
+.logo .dot {
+    width: 13px;
+    height: 13px;
+    background: #FFD43B;
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    border: 3px solid white;
+}
+
+/* HEADINGS */
+h1 {
+    margin-top: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* TOGGLE TABS */
+.tabs {
+    display: flex;
+    gap: 10px;
+    background: #F1F1F1;
+    padding: 6px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto 25px auto;
+}
+
+.tabs button {
+    padding: 10px 28px;
+    border: none;
+    border-radius: 40px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tabs button.active {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* FORM */
+form {
+    text-align: left;
+}
+
+form label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    font-size: 15px;
+    background: #F5F7FA;
+}
+.hidden {
+    display: none;
+}
+
+/* ACTIONS */
+.actions .primary,
+.help {
+    padding: 18px 35px;
+    font-size: 18px;
+    border-radius: 12px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions a {
+    color: #666;
+    font-size: 14px;
+}
+
+.actions .primary {
+    padding: 12px 25px;
+    border: none;
+    background: linear-gradient(135deg, #eec356, #FF9F00);
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+.help {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+/* TERMS */
+.terms {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #777;
+}
+
+.terms a {
+    color: #4A4CFF;
+}
+
+/* BACKGROUND SHAPES */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+.purple {
+    width: 350px;
+    height: 350px;
+    background: rgba(150, 140, 255, 0.4);
+    top: -50px;
+    left: -80px;
+}
+
+.yellow {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 230, 100, 0.35);
+    top: 120px;
+    right: -60px;
+}
+
+.blue {
+    width: 250px;
+    height: 250px;
+    background: rgba(140, 210, 255, 0.35);
+    bottom: 0;
+    left: -40px;
+}
+
+.floating-arrow {
+  position: fixed;
+  top: 100px;          /* adjust up/down */
+  right: 250px;        /* adjust left/right */
+  font-size: 65px;     /* thicker + bigger */
+  color: #49DFB0;   /* vibrant teal */
+  cursor: pointer;
+
+  /* Tilt slightly upward */
+  transform: rotate(-10deg);
+
+  /* Softer glow */
+  text-shadow: 0 0 4px#49DFB0,
+               0 0 8px #49DFB0;
+
+  /* Bounce + soft glow */
+  animation: arrowBounce 1.3s infinite ease-in-out,
+             arrowGlow 2s infinite ease-in-out;
+}
+
+/* Bounce (keeps the tilt) */
+@keyframes arrowBounce {
+  0%   { transform: translateY(0) rotate(-15deg); }
+  50%  { transform: translateY(-8px) rotate(-15deg); }
+  100% { transform: translateY(0) rotate(-15deg); }
+}
+.js-highlight {
+      box-shadow: 0 0 0 4px rgba(255, 191, 0, 0.15);
+      transition: box-shadow 300ms ease;
+    }
+
