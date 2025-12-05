@@ -1,5 +1,3 @@
-// auth.js
-
 export function saveUser(userData) {
     localStorage.setItem("user", JSON.stringify(userData));
 }
@@ -14,6 +12,9 @@ export function login(email, password) {
     if (!user) return false;
     if (user.email !== email) return false;
     if (user.password !== password) return false;
+
+    // Store authenticated user
+    localStorage.setItem("currentUser", JSON.stringify(user));
 
     return true;
 }

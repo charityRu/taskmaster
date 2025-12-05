@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="dashboard.js" defer></script>
+    <script type="module" src="modules/dashboard.js" defer></script>
     <title>Dashboard</title>
 </head>
 <body>
@@ -31,55 +31,44 @@
         <button id="logoutBtn" class="logout">Logout</button>
     </aside>
 
-   
+    <!-- Main Content -->
+    <main class="main">
+     <div id="page-content">
 
-  <!-- Main Content -->
-  <main class="main">
+       
 
-    <!-- Top Bar -->
-    <header class="topbar">
-      <h1>Hi Charity 👋</h1>
-      <button class="profile-btn">Profile</button>
-    </header>
-<section class="stats-grid">
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Active Tasks</h3>
+                <p class="value">0</p>
+                <small>0 completed</small>
+            </div>
 
-    <div class="stat-card">
-        <h3>Active Tasks</h3>
-        <p class="value">0</p>
-        <small>0 completed</small>
-    </div>
+            <div class="stat-card">
+                <h3>Total Expenses</h3>
+                <p class="value">$0.00</p>
+                <small>This period</small>
+            </div>
 
-    <div class="stat-card">
-        <h3>Total Expenses</h3>
-        <p class="value">$0.00</p>
-        <small>This period</small>
-    </div>
+            <div class="stat-card">
+                <h3>Total Notes</h3>
+                <p class="value">0</p>
+                <small>Saved notes</small>
+            </div>
 
-    <div class="stat-card">
-        <h3>Total Notes</h3>
-        <p class="value">0</p>
-        <small>Saved notes</small>
-    </div>
+            <div class="stat-card">
+                <h3>Completion Rate</h3>
+                <p class="value">0%</p>
+                <small>Task completion</small>
+            </div>
+        </section></div>
 
-    <div class="stat-card">
-        <h3>Completion Rate</h3>
-        <p class="value">0%</p>
-        <small>Task completion</small>
-    </div>
+        <section class="chart-box">
+            <h3>Activity Overview</h3>
+            <canvas id="chart"></canvas>
+        </section>
 
-</section>
-
-   
-
-    <!-- Chart Area -->
-    <section class="chart-box">
-      <h3>Activity Overview</h3>
-      <canvas id="chart"></canvas>
-    </section>
-
-  </main>
-
-</div>
+    </main>
 
 </div>
 </body>

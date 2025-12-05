@@ -1,11 +1,18 @@
-// main.js
 import { saveUser, login } from "./modules/auth.js";
-import { loadLogin, loadSignup } from "./modules/tabs.js";
+import { loadLogin, loadSignup, activateSwitchTabs } from "./modules/tabs.js";
 
-// Make sure login tab loads first when index.html opens
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  loadLogin();
+  loadLogin();          // load initial form
+  activateSwitchTabs(); // enable tab toggle
 });
+
+
+
+
+
+
 
 
 document.addEventListener("submit", (e) => {
@@ -23,9 +30,16 @@ document.addEventListener("submit", (e) => {
       return;
     }
 
+    // Save user
     saveUser({ fullName, email, password });
 
-    // Redirect to dashboard page
+    // Auto login user
+    localStorage.setItem(
+      "currentUser",
+      JSON.stringify({ fullName, email, password })
+    );
+
+    // Redirect
     window.location.href = "dashboard.html";
   }
 
@@ -42,6 +56,10 @@ document.addEventListener("submit", (e) => {
     const success = login(email, password);
 
     if (success) {
+      // Store authenticated user so dashboard can detect it
+      const user = JSON.parse(localStorage.getItem("user"));
+      localStorage.setItem("currentUser", JSON.stringify(user));
+
       window.location.href = "dashboard.html";
     } else {
       alert("Incorrect email or password");
@@ -49,13 +67,8 @@ document.addEventListener("submit", (e) => {
   }
 });
 
-// Tab Switching Controls
+// Tab s
 document.addEventListener("click", (e) => {
-  if (e.target.matches("#goToSignup")) {
-    loadSignup();
-  }
-
-  if (e.target.matches("#goToLogin")) {
-    loadLogin();
-  }
+  if (e.target.matches("#goToSignup")) loadSignup();
+  if (e.target.matches("#goToLogin")) loadLogin();
 });
